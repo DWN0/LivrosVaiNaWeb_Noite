@@ -1,9 +1,9 @@
 .LivrosDoadosSection{
-    height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    
     h2{
         font-size: 32px;
         height: 10vh;
@@ -21,14 +21,15 @@
 
     section{
         border: solid 3px #005695;
+        border-radius: 20px;
         width: 18%;
         height: 40vh;
-        border-radius: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
         margin-top: 2rem;
+        
         h3 {
             text-align: center;
         }
