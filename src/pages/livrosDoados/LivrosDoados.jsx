@@ -1,19 +1,34 @@
 import livroOprotagonista from '../../assets/livroOprotagonista.png'
-import s from './livrosDoados.module.scss'
+import S from './livrosDoados.module.scss'
+import { useState,useEffect } from 'react';
+import axios from 'axios';
+
 export default function LivrosDoados() {
-  return (
-    <section className={s.LivrosDoadosSection}>
+
+  const [livros,setLivros] = useState([])
+
+  const puxarLivros = async() =>{
+    const resposta = await axios.get("https://api-livros-vai-na-web-gzqn.onrender.com/doar")
+    setLivros(resposta.data)
+  }
+  useEffect(()=>{
+    getLivros()
+  },[])
+  return(
+    <section className={S.LivrosDoadosSection}>
       <h2>Livros Doados</h2>
-      <section className={s.containerCards}>
-        <section>
-            <img src={livroOprotagonista} alt="Imagem do livro O Protagonista, o mesmo possui capa vermelha e o título escrito em caixa alta na cor branca."/>
-        <div>
-            <h3>O protagonista</h3>
-            <p>Susanne Andrade</p>
-            <p>Ficção</p>
-        </div>
-        </section>
+      <section className={S.containerCards}>
+        {
+          livros.map((item)=>(
+            <section>
+              <img src={item.image_url} alt={`Titulo do livro ${item.titulo}`} />
+              <h3>{item.titulo}</h3>
+              <p>{item.autor}</p>
+              <p>{item.categoria}</p>
+            </section>
+          ))
+        }
       </section>
     </section>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import s from './inicio.module.scss'
+import S from './inicio.module.scss'
 import doacao01 from '../../assets/doacao01.png'
 import doacao02 from '../../assets/doacao02.png'
 import doacao03 from '../../assets/doacao03.png'
@@ -6,14 +6,14 @@ import doacao04 from '../../assets/doacao04.png'
 export default function Inicio() {
   return (
       <main>
-        <section className={s.primeiraSecaoInicio}>
+        <section className={S.primeiraSecaoInicio}>
           <h2>VENHA FAZER PARTE DA MAIOR REDE DE DOAÇÃO</h2>
         </section>
-        <section className={s.porqueDoarSection}>
+        <section className={S.porqueDoarSection}>
           <h2>Por que devo doar?</h2>
         </section>
         <section>
-        <div className={s.containerCards}>
+        <div className={S.containerCards}>
           <section>
             <img src={doacao01} alt="Ilustração de pessoas em círculo." />
             <p> Oferece livros a quem não tem acesso, ajudando a reduzir a exclusão social.</p>
